@@ -24,7 +24,7 @@ def main_menu():
             start_date = input("תאריך התחלה (YYYY-MM-DD): ")
             end_date = input("תאריך סיום (YYYY-MM-DD): ")
             status = input("סטטוס (open/in_progress/completed): ")
-            add_task(title, description, start_date, end_date, status)
+            add_task.add_task(title, description, start_date, end_date, status)
 
         elif choice == '2':
             task_id = int(input("הכנס ID של המשימה לעדכון: "))
@@ -35,23 +35,23 @@ def main_menu():
             update_choice = input("בחר אפשרות: ")
             if update_choice == '1':
                 new_status = input("סטטוס חדש: ")
-                update_task(task_id, status=new_status)
+                update_task.update_task(task_id, status=new_status)
             elif update_choice == '2':
                 new_description = input("תיאור חדש: ")
-                update_task(task_id, description=new_description)
+                update_task.update_task(task_id, description=new_description)
             elif update_choice == '3':
                 new_start = input("תאריך התחלה חדש (YYYY-MM-DD): ")
                 new_end = input("תאריך סיום חדש (YYYY-MM-DD): ")
-                update_task(task_id, start_date=new_start, end_date=new_end)
+                update_task.update_task(task_id, start_date=new_start, end_date=new_end)
             else:
                 print("בחירה לא תקינה.")
 
         elif choice == '3':
             task_id = int(input("הכנס ID של המשימה למחיקה: "))
-            delete_task(task_id)
+            delete_task.delete_task(task_id)
 
         elif choice == '4':
-            subtasks.list_tasks()
+            show_tasks.list_tasks()
 
         elif choice == '5':
             status = input("הכנס סטטוס לחיפוש (open/in_progress/completed): ")
