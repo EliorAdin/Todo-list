@@ -1,3 +1,10 @@
+import add_task
+import update_task
+import delete_task
+import subtasks
+import show_tasks
+import find_tasks
+
 def main_menu():
     while True:
         print("\n--- יומן משימות ---")
@@ -44,14 +51,14 @@ def main_menu():
             delete_task(task_id)
 
         elif choice == '4':
-            list_tasks()
+            subtasks.list_tasks()
 
         elif choice == '5':
             status = input("הכנס סטטוס לחיפוש (open/in_progress/completed): ")
-            find_tasks_by_status(status)
+            find_tasks.find_tasks_by_status(status)
 
         elif choice == '6':
-            export_tasks_to_json()
+            subtasks.export_tasks_to_json()
 
         elif choice == '7':
             print("להתראות!")
